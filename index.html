@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivos Media — Webseiten & Brand Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --r:#FF3D14;   /* Sirene */
+  --k:#141210;   /* Tinte  */
+  --p:#F4EFE6;   /* Papier */
+  --s:#E6DFD0;   /* Sand   */
+  --g:#8A857C;   /* Beton  */
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--p);color:var(--k);overflow-x:hidden;}
+
+/* GRAIN */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:8000;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .45s,backdrop-filter .45s,border-bottom .45s;}
+nav.on{background:rgba(244,239,230,.92);backdrop-filter:blur(22px);border-bottom:.5px solid rgba(20,18,16,.1);}
+.logo{display:inline-flex;align-items:flex-end;text-decoration:none;}
+.logo-w{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;color:var(--p);letter-spacing:-.04em;line-height:1;transition:color .45s;}
+.logo-d{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;color:var(--r);line-height:1;}
+.logo-s{font-family:'DM Sans',sans-serif;font-weight:300;font-size:7.5px;letter-spacing:.28em;color:var(--g);margin-left:4px;margin-bottom:3px;}
+nav.on .logo-w{color:var(--k);}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:13px;color:var(--g);text-decoration:none;letter-spacing:.04em;transition:color .3s;}
+.nav-links a:hover{color:var(--k);}
+nav:not(.on) .nav-links a:hover{color:var(--p);}
+.nav-btn{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--p) !important;background:var(--r);padding:10px 22px;border-radius:3px;text-decoration:none;transition:box-shadow .3s !important;}
+nav.on .nav-btn{color:var(--k) !important;}
+.nav-btn:hover{box-shadow:0 8px 32px rgba(255,61,20,.4);}
+
+/* HERO — dark, dramatic opener */
+#hero{height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4rem 5.5rem;position:relative;overflow:hidden;background:var(--k);}
+.h-bg{position:absolute;inset:0;}
+.h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(244,239,230,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(244,239,230,.025) 1px,transparent 1px);background-size:72px 72px;}
+.h-orb{position:absolute;border-radius:50%;filter:blur(110px);animation:bob 9s ease-in-out infinite;}
+.h-orb-a{width:650px;height:650px;background:var(--r);opacity:.09;top:-220px;right:-80px;}
+.h-orb-b{width:380px;height:380px;background:var(--r);opacity:.05;bottom:60px;left:35%;animation-delay:-5s;}
+@keyframes bob{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-50px) scale(1.06);}}
+
+.h-content{position:relative;z-index:1;}
+.h-tag{font-size:10.5px;letter-spacing:.32em;color:var(--r);text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:12px;opacity:0;animation:up .8s var(--ease) .15s forwards;}
+.h-tag::before{content:'';width:36px;height:1px;background:var(--r);}
+.h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(58px,8.5vw,128px);line-height:.9;letter-spacing:-.045em;color:var(--p);margin-bottom:3rem;}
+.h1 .ln{display:block;overflow:hidden;}
+.h1 .lni{display:block;opacity:0;transform:translateY(104%);animation:slide 1s var(--ease) forwards;}
+.h1 .ln:nth-child(1) .lni{animation-delay:.35s;}
+.h1 .ln:nth-child(2) .lni{animation-delay:.5s;}
+.h1 .ac{color:var(--r);}
+.h1 .ol{-webkit-text-stroke:2px var(--p);color:transparent;}
+@keyframes slide{to{opacity:1;transform:translateY(0);}}
+@keyframes up{to{opacity:1;transform:translateY(0);}}
+.h-bot{display:flex;align-items:flex-end;justify-content:space-between;opacity:0;animation:up .8s var(--ease) 1s forwards;}
+.h-sub{font-size:16px;font-weight:300;color:var(--g);max-width:360px;line-height:1.65;}
+.h-acts{display:flex;align-items:center;gap:1.5rem;}
+
+/* BUTTONS */
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--k);background:var(--r);padding:16px 30px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;overflow:hidden;transition:box-shadow .4s;}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.14);opacity:0;transition:opacity .3s;}
+.btn:hover::after{opacity:1;}
+.btn:hover{box-shadow:0 18px 56px rgba(255,61,20,.4);}
+.btn svg{transition:transform .3s;}
+.btn:hover svg{transform:translateX(4px);}
+.btn-g{font-size:13px;font-weight:400;color:rgba(138,133,124,.8);text-decoration:none;border-bottom:1px solid rgba(138,133,124,.3);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.btn-g:hover{color:var(--p);border-color:rgba(244,239,230,.5);}
+
+/* SCROLL RING */
+.scroll-ind{position:absolute;bottom:5rem;right:4rem;z-index:1;opacity:0;animation:up .8s var(--ease) 1.4s forwards;}
+.scroll-svg{animation:spin 9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.scroll-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;background:var(--r);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.6);}}
+
+/* STATS — Sand */
+#stats{background:var(--s);padding:2.8rem 4rem;border-bottom:.5px solid rgba(20,18,16,.08);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:1.2rem 2rem;border-right:.5px solid rgba(20,18,16,.1);}
+.stat:first-child{padding-left:0;}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;letter-spacing:-.04em;color:var(--k);line-height:1;margin-bottom:.3rem;}
+.stat-n em{color:var(--r);font-style:normal;}
+.stat-l{font-size:12.5px;font-weight:300;color:var(--g);letter-spacing:.04em;}
+
+/* SECTION GLOBALS */
+section{padding:7.5rem 4rem;}
+.stag{font-size:10px;letter-spacing:.35em;color:var(--r);text-transform:uppercase;margin-bottom:1.4rem;display:flex;align-items:center;gap:10px;}
+.stag::before{content:'';width:22px;height:1px;background:var(--r);}
+.sh{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(36px,5vw,66px);letter-spacing:-.03em;line-height:.96;color:var(--k);margin-bottom:1.4rem;}
+.ssub{font-size:16px;font-weight:300;color:var(--g);line-height:1.65;}
+
+/* LEISTUNGEN — Papier */
+#leistungen{background:var(--p);}
+.lhd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cwrap{perspective:1100px;}
+.card{border-radius:10px;overflow:hidden;transform-style:preserve-3d;transition:transform .1s ease;}
+
+/* Card A — white, light */
+.ci{padding:3rem;min-height:480px;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.ca{background:#fff;border:.5px solid rgba(20,18,16,.08);box-shadow:0 2px 24px rgba(20,18,16,.06);}
+.ca:hover{box-shadow:0 8px 48px rgba(20,18,16,.1);}
+
+/* Card B — Tinte, dark */
+.cb{background:var(--k);}
+
+.cnum{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;color:var(--g);margin-bottom:auto;}
+.cb .cnum{color:rgba(244,239,230,.2);}
+.cion{width:52px;height:52px;margin-bottom:1.8rem;margin-top:2.5rem;}
+.ct{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,3vw,42px);letter-spacing:-.03em;color:var(--k);line-height:1;margin-bottom:.8rem;}
+.cb .ct{color:var(--p);}
+.cd{font-size:14.5px;font-weight:300;color:var(--g);line-height:1.62;margin-bottom:2rem;max-width:300px;}
+.cb .cd{color:rgba(244,239,230,.45);}
+.cfl{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:2rem;}
+.cfl li{font-size:12.5px;color:rgba(20,18,16,.5);display:flex;align-items:center;gap:9px;}
+.cb .cfl li{color:rgba(244,239,230,.45);}
+.cfl li::before{content:'';width:14px;height:1px;background:var(--r);flex-shrink:0;}
+.clink{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--k);text-decoration:none;border-bottom:1px solid rgba(20,18,16,.2);padding-bottom:3px;transition:gap .3s,border-color .3s;width:fit-content;}
+.cb .clink{color:var(--p);border-color:rgba(244,239,230,.2);}
+.clink:hover{gap:14px;border-color:var(--r);}
+.sheen{position:absolute;inset:0;background:linear-gradient(130deg,rgba(255,255,255,.18) 0%,transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none;}
+.card:hover .sheen{opacity:1;}
+.deco1{position:absolute;right:-50px;bottom:-50px;width:220px;height:220px;border-radius:50%;background:rgba(244,239,230,.06);}
+.deco2{position:absolute;right:50px;bottom:-90px;width:170px;height:170px;border-radius:50%;background:rgba(244,239,230,.04);}
+
+/* WARUM — Sand */
+#warum{background:var(--s);}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:4.5rem;}
+.wpts{display:flex;flex-direction:column;}
+.wpt{padding:1.8rem 0;border-bottom:.5px solid rgba(20,18,16,.1);display:flex;gap:1.8rem;align-items:flex-start;}
+.wpt:first-child{padding-top:0;}
+.wn{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--r);flex-shrink:0;margin-top:2px;}
+.wt h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--k);margin-bottom:.45rem;}
+.wt p{font-size:14px;font-weight:300;color:var(--g);line-height:1.65;}
+.wvis{position:sticky;top:90px;}
+.wbox{background:var(--k);border-radius:10px;padding:3rem;aspect-ratio:1;display:flex;flex-direction:column;justify-content:center;gap:1.2rem;overflow:hidden;position:relative;}
+.wbox-logo{margin-top:auto;padding-top:1.8rem;border-top:.5px solid rgba(244,239,230,.08);}
+.wbox-lw{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;letter-spacing:-.04em;color:var(--p);line-height:1;}
+.wbox-ls{font-size:10px;letter-spacing:.25em;color:var(--g);margin-top:3px;}
+.stars{display:flex;gap:3px;}
+.stars span{color:var(--r);font-size:14px;}
+.quote{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.025em;color:var(--p);line-height:1.2;}
+.quote em{color:var(--r);font-style:normal;}
+.qfrom{font-size:12px;font-weight:300;color:var(--g);}
+
+/* PROZESS — white */
+#prozess{background:#fff;}
+.phd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:5rem;}
+.psteps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.pline{position:absolute;top:27px;left:calc(25%/2 + 28px);right:calc(25%/2 + 28px);height:.5px;background:rgba(20,18,16,.1);}
+.pstep{padding-right:2rem;position:relative;}
+.pstep:last-child{padding-right:0;}
+.pmk{width:56px;height:56px;border-radius:50%;border:.5px solid rgba(20,18,16,.15);display:flex;align-items:center;justify-content:center;margin-bottom:2rem;background:#fff;transition:border-color .4s,background .4s;}
+.pstep:hover .pmk{border-color:var(--r);background:rgba(255,61,20,.05);}
+.pmn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;color:rgba(20,18,16,.3);transition:color .4s;}
+.pstep:hover .pmn{color:var(--r);}
+.ptit{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.02em;color:var(--k);margin-bottom:.6rem;}
+.pdesc{font-size:13.5px;font-weight:300;color:var(--g);line-height:1.65;}
+.ptag{display:inline-block;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--r);margin-top:.9rem;border:.5px solid rgba(255,61,20,.3);padding:3px 9px;border-radius:2px;}
+
+/* KONTAKT — Papier */
+#kontakt{background:var(--p);padding:9rem 4rem 10rem;}
+.kgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:6rem;align-items:start;}
+.kleft{position:sticky;top:90px;}
+.kprom{margin-top:2.5rem;display:flex;flex-direction:column;gap:.9rem;}
+.kpi{display:flex;align-items:center;gap:11px;font-size:13.5px;font-weight:300;color:var(--g);}
+.kpi::before{content:'';width:18px;height:1px;background:var(--r);flex-shrink:0;}
+
+/* FORM */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:1.4rem;}
+.fg{display:flex;flex-direction:column;gap:.45rem;}
+.fg.full{grid-column:1/-1;}
+.fl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g);}
+.fi,.fsel,.fta{background:#fff;border:.5px solid rgba(20,18,16,.14);border-radius:4px;padding:13px 15px;font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:300;color:var(--k);width:100%;transition:border-color .3s,box-shadow .3s;outline:none;appearance:none;}
+.fi::placeholder,.fta::placeholder{color:rgba(20,18,16,.28);}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--r);box-shadow:0 0 0 3px rgba(255,61,20,.08);}
+.fta{resize:vertical;min-height:150px;}
+.fsel{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238A857C' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px;}
+.fsel option{background:#fff;color:var(--k);}
+.fnote{font-size:11.5px;font-weight:300;color:var(--g);opacity:.7;margin-bottom:1rem;}
+.bsub{display:inline-flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--k);background:var(--r);border:none;padding:17px 36px;border-radius:3px;cursor:pointer;position:relative;overflow:hidden;transition:box-shadow .4s;}
+.bsub::before{content:'';position:absolute;inset:0;background:var(--k);transform:translateY(101%);transition:transform .45s var(--ease);}
+.bsub:hover::before{transform:translateY(0);}
+.bsub .bt,.bsub svg{position:relative;z-index:1;transition:color .45s;}
+.bsub:hover .bt{color:var(--p);}
+.bsub:hover svg path{stroke:var(--p);}
+.bsub:hover{box-shadow:0 20px 70px rgba(255,61,20,.22);}
+
+/* SUCCESS */
+.fsuc{display:none;flex-direction:column;align-items:center;gap:1.5rem;padding:4rem 2rem;text-align:center;}
+.fsuc.show{display:flex;}
+.sico{width:60px;height:60px;background:rgba(255,61,20,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,61,20,.25);}
+.stit{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.02em;color:var(--k);}
+.ssb{font-size:14px;font-weight:300;color:var(--g);max-width:260px;line-height:1.6;}
+
+/* FOOTER — Tinte, dark anchor */
+footer{background:var(--k);border-top:none;padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;}
+footer .logo-w{color:var(--p);}
+.flinks{display:flex;gap:2rem;list-style:none;}
+.flinks a{font-size:12px;color:var(--g);text-decoration:none;transition:color .3s;}
+.flinks a:hover{color:var(--p);}
+.fcopy{font-size:11.5px;font-weight:300;color:rgba(138,133,124,.5);}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.rv.on{opacity:1;transform:translateY(0);}
+.rvl{opacity:0;transform:translateX(-36px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.rvl.on{opacity:1;transform:translateX(0);}
+.rvr{opacity:0;transform:translateX(36px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.rvr.on{opacity:1;transform:translateX(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* PORTFOLIO */
+#portfolio{background:var(--k);}
+#portfolio .sh{color:var(--p);}
+#portfolio .sh .ol{-webkit-text-stroke:2px var(--p);color:transparent;}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:3.5rem;}
+@media(max-width:768px){.pgrid{grid-template-columns:1fr;}}
+.pcard{border-radius:8px;overflow:hidden;}
+.pcard--done{cursor:pointer;transition:box-shadow .4s;}
+.pcard--done:hover{box-shadow:0 32px 80px rgba(0,0,0,.4);}
+.pimg{height:280px;position:relative;transition:transform .6s var(--ease);}
+.pcard--done:hover .pimg{transform:scale(1.02);}
+.pcard--soon .pimg{background:rgba(244,239,230,.03);border:.5px solid rgba(244,239,230,.06);border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;overflow:hidden;}
+.pmeta{padding:1.5rem;background:rgba(244,239,230,.04);border-top:.5px solid rgba(244,239,230,.08);}
+.pcard--soon .pmeta{border-top:.5px solid rgba(244,239,230,.06);}
+.ptags{display:flex;gap:6px;flex-wrap:wrap;}
+.ptag-pill{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--g);border:.5px solid rgba(138,133,124,.25);padding:3px 9px;border-radius:2px;}
+.ptitle{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--p);margin-top:.5rem;}
+.plink{font-size:11px;letter-spacing:.1em;color:var(--r);text-decoration:none;margin-top:.75rem;display:inline-block;transition:letter-spacing .3s;}
+.plink:hover{letter-spacing:.16em;}
+.poverlay{position:absolute;inset:0;z-index:2;}
+.pbrowser{width:100%;height:100%;display:flex;flex-direction:column;}
+.pbrowser-bar{height:28px;background:#E6DFD0;display:flex;align-items:center;padding:0 10px;gap:5px;flex-shrink:0;}
+.pb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.pb-url{flex:1;background:rgba(20,18,16,.08);border-radius:20px;height:14px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:300;color:var(--g);margin:0 6px;letter-spacing:.02em;}
+.pbscreen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">
+    <span class="logo-w">vivos</span><span class="logo-d">.</span><span class="logo-s">media</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#warum">Über uns</a></li>
+    <li><a href="#prozess">Prozess</a></li>
+    <li><a href="#kontakt" class="nav-btn">Anfragen</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — dark, voller Kontrast -->
+<section id="hero">
+  <div class="h-bg">
+    <div class="h-grid"></div>
+    <div class="h-orb h-orb-a"></div>
+    <div class="h-orb h-orb-b"></div>
+  </div>
+  <div class="h-content">
+    <div class="h-tag">Berlin · Für lokale Läden</div>
+    <h1 class="h1">
+      <span class="ln"><span class="lni">Dein Laden<span class="ac">.</span></span></span>
+      <span class="ln"><span class="lni"><span class="ol">Online</span> sichtbar<span class="ac">.</span></span></span>
+    </h1>
+    <div class="h-bot">
+      <p class="h-sub">Wir machen Webseiten und Brand Assets für Berliner Cafés, Friseure, Restaurants und Boutiquen – zu Preisen die sich wirklich lohnen.</p>
+      <div class="h-acts">
+        <a href="#kontakt" class="btn mag">
+          <span class="bt">Kostenlos anfragen</span>
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3.5 8.5h10M9 4l4.5 4.5L9 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#leistungen" class="btn-g">Unsere Leistungen ansehen →</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <svg class="scroll-svg" width="80" height="80" viewBox="0 0 80 80">
+      <defs><path id="c" d="M40,40 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/></defs>
+      <text font-family="DM Sans,sans-serif" font-size="9.5" letter-spacing="2.2" fill="#8A857C">
+        <textPath href="#c">scroll nach unten · scroll nach unten ·</textPath>
+      </text>
+    </svg>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- STATS — Sand -->
+<div id="stats">
+  <div class="stats">
+    <div class="stat rv"><div class="stat-n" data-count="10" data-suffix="+">0</div><div class="stat-l">Zufriedene Kunden</div></div>
+    <div class="stat rv d1"><div class="stat-n" data-count="24" data-suffix="h">0</div><div class="stat-l">Durchschn. Reaktionszeit</div></div>
+    <div class="stat rv d2"><div class="stat-n" data-count="2" data-suffix="">0</div><div class="stat-l">Berliner Gründer</div></div>
+    <div class="stat rv d3"><div class="stat-n" data-count="0" data-suffix="€">0</div><div class="stat-l">Erstgespräch</div></div>
+  </div>
+</div>
+
+<!-- LEISTUNGEN — Papier -->
+<section id="leistungen">
+  <div class="lhd">
+    <div>
+      <div class="stag rv">Was wir machen</div>
+      <h2 class="sh rv d1">Leistungen<span style="color:var(--r)">.</span></h2>
+    </div>
+    <p class="ssub rv d2" style="max-width:340px;text-align:right;">Alles aus einer Hand — von der ersten Idee bis zum fertigen Produkt.</p>
+  </div>
+  <div class="lgrid">
+
+    <!-- Card A — Webseiten, weiß -->
+    <div class="cwrap rv d1">
+      <div class="card" data-tilt>
+        <div class="ci ca">
+          <div class="sheen"></div>
+          <span class="cnum">01</span>
+          <svg class="cion" viewBox="0 0 52 52" fill="none">
+            <rect width="52" height="52" rx="7" fill="rgba(255,61,20,.07)"/>
+            <rect x="11" y="15" width="30" height="22" rx="3" stroke="#FF3D14" stroke-width="1.1"/>
+            <line x1="11" y1="22" x2="41" y2="22" stroke="#FF3D14" stroke-width="1.1"/>
+            <circle cx="16" cy="18.5" r="1.4" fill="#FF3D14"/>
+            <circle cx="21" cy="18.5" r="1.4" fill="rgba(255,61,20,.4)"/>
+            <circle cx="26" cy="18.5" r="1.4" fill="rgba(255,61,20,.2)"/>
+            <rect x="15" y="27" width="10" height="5" rx="1.5" fill="rgba(255,61,20,.2)"/>
+            <rect x="28" y="27" width="9" height="2" rx="1" fill="rgba(255,61,20,.12)"/>
+            <rect x="28" y="31" width="6" height="1.5" rx=".75" fill="rgba(255,61,20,.08)"/>
+          </svg>
+          <h3 class="ct">Webseiten</h3>
+          <p class="cd">Eine Website die deine Stammkunden kennen und neue Kunden findet. Mobil, schnell, auf den Punkt.</p>
+          <ul class="cfl">
+            <li>Design nach deinem Stil</li>
+            <li>Mobil optimiert</li>
+            <li>Speisekarte / Preisliste integrierbar</li>
+            <li>In 2 Wochen live</li>
+            <li>Ab 399 €</li>
+          </ul>
+          <a href="#kontakt" class="clink">Webseite anfragen <span>→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card B — Brand Assets, Tinte -->
+    <div class="cwrap rv d2">
+      <div class="card" data-tilt>
+        <div class="ci cb">
+          <div class="deco1"></div><div class="deco2"></div>
+          <div class="sheen"></div>
+          <span class="cnum">02</span>
+          <svg class="cion" viewBox="0 0 52 52" fill="none">
+            <rect width="52" height="52" rx="7" fill="rgba(244,239,230,.06)"/>
+            <circle cx="26" cy="26" r="10" stroke="rgba(244,239,230,.3)" stroke-width="1.1"/>
+            <circle cx="26" cy="26" r="4" fill="rgba(244,239,230,.25)"/>
+            <path d="M26 12v5M26 35v5M12 26h5M35 26h5" stroke="rgba(244,239,230,.25)" stroke-width="1.1" stroke-linecap="round"/>
+            <circle cx="26" cy="26" r="16" stroke="rgba(255,61,20,.3)" stroke-width=".8" stroke-dasharray="3 3"/>
+          </svg>
+          <h3 class="ct">Brand Assets</h3>
+          <p class="cd">Logo, Farben, Instagram-Templates – damit dein Laden online genauso gut aussieht wie in echt.</p>
+          <ul class="cfl">
+            <li>Logo &amp; Farbpalette</li>
+            <li>Instagram-Vorlagen (editierbar)</li>
+            <li>Visitenkarten-Design</li>
+            <li>Alles in Canva bearbeitbar</li>
+            <li>Ab 199 €</li>
+          </ul>
+          <a href="#kontakt" class="clink">Brand anfragen <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO — Tinte/dunkel -->
+<section id="portfolio">
+  <div class="stag rv">Unsere Arbeit</div>
+  <h2 class="sh rv d1">Projekte die<br><span class="ol">für sich</span> sprechen<span style="color:var(--r)">.</span></h2>
+  <p class="ssub rv d2">Echte Webseiten für Berliner Läden.<br>Jede davon in unter 2 Wochen geliefert.</p>
+
+  <div class="pgrid">
+
+    <!-- Karte 1 — Röstwerk Berlin -->
+    <div class="pcard pcard--done rv d1">
+      <div class="pimg">
+        <a href="#" class="poverlay" aria-label="Röstwerk Berlin ansehen"></a>
+        <div class="pbrowser" style="background:var(--s);">
+          <div class="pbrowser-bar">
+            <div class="pb-dot" style="background:#FF3D14;"></div>
+            <div class="pb-dot" style="background:#E6DFD0;"></div>
+            <div class="pb-dot" style="background:#8A857C;"></div>
+            <div class="pb-url">café-demo.vivos.media</div>
+          </div>
+          <div class="pbscreen" style="background:#F4EFE6;">
+            <span style="font-size:9px;letter-spacing:.25em;color:var(--r);text-transform:uppercase;">CAFÉ · BERLIN</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;color:var(--k);letter-spacing:-.03em;line-height:1;">Röstwerk</span>
+            <div style="width:32px;height:1px;background:var(--r);"></div>
+            <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Specialty Coffee</span>
+          </div>
+        </div>
+      </div>
+      <div class="pmeta">
+        <div class="ptags">
+          <span class="ptag-pill">Café</span>
+          <span class="ptag-pill">Webseite</span>
+          <span class="ptag-pill">Brand Assets</span>
+        </div>
+        <div class="ptitle">Röstwerk Berlin</div>
+        <a href="#" class="plink">Website ansehen →</a>
+      </div>
+    </div>
+
+    <!-- Karte 2 — Snip Studio Berlin -->
+    <div class="pcard pcard--done rv d2">
+      <div class="pimg">
+        <a href="#" class="poverlay" aria-label="Snip Studio Berlin ansehen"></a>
+        <div class="pbrowser" style="background:var(--s);">
+          <div class="pbrowser-bar">
+            <div class="pb-dot" style="background:#FF3D14;"></div>
+            <div class="pb-dot" style="background:#E6DFD0;"></div>
+            <div class="pb-dot" style="background:#8A857C;"></div>
+            <div class="pb-url">snip-demo.vivos.media</div>
+          </div>
+          <div class="pbscreen" style="background:#141210;">
+            <span style="font-size:9px;letter-spacing:.25em;color:var(--r);text-transform:uppercase;">FRISEURSALON · BERLIN</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;color:var(--p);letter-spacing:-.03em;line-height:1;">Snip Studio</span>
+            <div style="width:32px;height:1px;background:var(--r);"></div>
+            <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Modern Hair Berlin</span>
+          </div>
+        </div>
+      </div>
+      <div class="pmeta">
+        <div class="ptags">
+          <span class="ptag-pill">Friseursalon</span>
+          <span class="ptag-pill">Webseite</span>
+          <span class="ptag-pill">Online Booking</span>
+        </div>
+        <div class="ptitle">Snip Studio Berlin</div>
+        <a href="#" class="plink">Website ansehen →</a>
+      </div>
+    </div>
+
+    <!-- Karte 3 — Coming Soon -->
+    <div class="pcard pcard--soon rv d3">
+      <div class="pimg">
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:64px;color:rgba(244,239,230,.08);line-height:1;">?</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:rgba(244,239,230,.3);">Dein Laden hier?</span>
+        <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Wir nehmen neue Projekte an.</span>
+        <a href="#kontakt" class="btn" style="padding:12px 22px;font-size:11px;margin-top:.5rem;"><span class="bt">Jetzt anfragen</span></a>
+      </div>
+      <div class="pmeta">
+        <div class="ptitle" style="color:rgba(244,239,230,.3);margin-top:0;">Nächstes Projekt</div>
+        <p style="font-size:13px;font-weight:300;color:var(--g);margin-top:.4rem;">Du könntest hier stehen.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WARUM — Sand -->
+<section id="warum">
+  <div class="stag rv">Warum Vivos Media</div>
+  <h2 class="sh rv d1">Qualität, die<br>man sieht<span style="color:var(--r)">.</span></h2>
+  <div class="wgrid">
+    <div class="wpts">
+      <div class="wpt rv">
+        <span class="wn">01</span>
+        <div class="wt"><h3>Kiezkenner</h3><p>Wir kennen Berliner Läden von innen. Kein Agentur-Blabla, sondern Leute die selbst in Neukölln frühstücken.</p></div>
+      </div>
+      <div class="wpt rv d1">
+        <span class="wn">02</span>
+        <div class="wt"><h3>Festpreise ohne Überraschungen</h3><p>Webseite ab 399 €, Brand-Paket ab 199 €. Was wir sagen, das kostet es auch.</p></div>
+      </div>
+      <div class="wpt rv d2">
+        <span class="wn">03</span>
+        <div class="wt"><h3>Schnell &amp; unkompliziert</h3><p>Kein monatelanger Prozess. Von Erstgespräch bis fertige Website in 2 Wochen.</p></div>
+      </div>
+      <div class="wpt rv d3">
+        <span class="wn">04</span>
+        <div class="wt"><h3>Immer erreichbar</h3><p>Du schreibst uns, du hörst von uns. Kein Ticketsystem, kein Account Manager.</p></div>
+      </div>
+    </div>
+    <div class="wvis rvr">
+      <div class="wbox">
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="quote">„Unsere neue Webseite hat die Anfragen innerhalb von zwei Wochen verdoppelt. Klare Empfehlung<em>.</em>"</p>
+        <span class="qfrom">— Sabine K., Inhaberin, Praxis für Physiotherapie</span>
+        <div class="wbox-logo">
+          <div class="wbox-lw">vivos<span style="color:var(--r)">.</span></div>
+          <div class="wbox-ls">media</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS — weiß -->
+<section id="prozess">
+  <div class="phd">
+    <div>
+      <div class="stag rv">So arbeiten wir</div>
+      <h2 class="sh rv d1">Der Prozess<span style="color:var(--r)">.</span></h2>
+    </div>
+    <p class="ssub rv d2" style="max-width:300px;text-align:right;">Von der Idee bis zum Launch — transparent und ohne Umwege.</p>
+  </div>
+  <div class="psteps">
+    <div class="pline"></div>
+    <div class="pstep rv">
+      <div class="pmk"><span class="pmn">01</span></div>
+      <h3 class="ptit">Erstgespräch</h3>
+      <p class="pdesc">Wir lernen dein Unternehmen, deine Ziele und deine Zielgruppe kennen. Kostenlos und unverbindlich.</p>
+      <span class="ptag">Kostenlos</span>
+    </div>
+    <div class="pstep rv d1">
+      <div class="pmk"><span class="pmn">02</span></div>
+      <h3 class="ptit">Konzept &amp; Angebot</h3>
+      <p class="pdesc">Maßgeschneidertes Konzept mit transparentem Festpreis — kein versteckter Kleindruck.</p>
+      <span class="ptag">Ø 48 Std.</span>
+    </div>
+    <div class="pstep rv d2">
+      <div class="pmk"><span class="pmn">03</span></div>
+      <h3 class="ptit">Umsetzung</h3>
+      <p class="pdesc">Du bleibst auf dem Laufenden. Feedbackrunden nach Plan, keine Überraschungen, kein Chaos.</p>
+      <span class="ptag">Ø 14 Tage</span>
+    </div>
+    <div class="pstep rv d3">
+      <div class="pmk"><span class="pmn">04</span></div>
+      <h3 class="ptit">Launch &amp; Support</h3>
+      <p class="pdesc">Go-Live inklusive Briefing. Danach stehen wir dir weiterhin als verlässlicher Ansprechpartner zur Seite.</p>
+      <span class="ptag">Nachhaltig</span>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT — Papier -->
+<section id="kontakt">
+  <div class="kgrid">
+    <div class="kleft">
+      <div class="stag rv">Bereit anzufangen?</div>
+      <h2 class="sh rv d1">Hallo,<br>Nachbar<span style="color:var(--r)">.</span></h2>
+      <p class="ssub rv d2" style="margin-top:1.4rem;">Schreib uns kurz was du brauchst – wir schauen ob wir zusammenpassen und melden uns innerhalb von 24 Stunden. Erstgespräch ist kostenlos, immer.</p>
+      <div class="kprom rv d3">
+        <div class="kpi">Antwort in 24h</div>
+        <div class="kpi">Kostenlos &amp; unverbindlich</div>
+        <div class="kpi">Festpreise – keine versteckten Kosten</div>
+        <div class="kpi">Direkt mit dem Gründer</div>
+      </div>
+    </div>
+    <div class="rvr">
+      <form id="kform">
+        <div class="fgrid">
+          <div class="fg rv"><label class="fl">Vorname</label><input type="text" class="fi" placeholder="Max" required></div>
+          <div class="fg rv d1"><label class="fl">Nachname</label><input type="text" class="fi" placeholder="Mustermann" required></div>
+          <div class="fg rv d1"><label class="fl">E-Mail</label><input type="email" class="fi" placeholder="max@mustermann.de" required></div>
+          <div class="fg rv d2"><label class="fl">Unternehmen</label><input type="text" class="fi" placeholder="Muster GmbH"></div>
+          <div class="fg full rv d2">
+            <label class="fl">Ich interessiere mich für</label>
+            <select class="fsel" required>
+              <option value="" disabled selected>Bitte wählen …</option>
+              <option value="webseite">Webseite</option>
+              <option value="brand">Brand Assets</option>
+              <option value="beides">Webseite + Brand Assets</option>
+              <option value="andere">Anderes Projekt</option>
+            </select>
+          </div>
+          <div class="fg full rv d3">
+            <label class="fl">Dein Projekt</label>
+            <textarea class="fta" placeholder="Erzähl uns kurz, was du dir vorstellst. Je mehr Details, desto besser können wir helfen …" required></textarea>
+          </div>
+        </div>
+        <p class="fnote rv">Alle Anfragen werden vertraulich behandelt. Kein Spam, versprochen.</p>
+        <button type="submit" class="bsub mag rv d1">
+          <span class="bt">Unverbindlich anfragen</span>
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3.5 8.5h10M9 4l4.5 4.5L9 13" stroke="#141210" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <div class="fsuc" id="fsuc">
+        <div class="sico"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 13l6 6L22 7" stroke="#FF3D14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 class="stit">Nachricht erhalten!</h3>
+        <p class="ssb">Wir melden uns innerhalb von 24 Stunden. Bis gleich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — Tinte -->
+<footer>
+  <a href="#" class="logo">
+    <span class="logo-w">vivos</span><span class="logo-d">.</span><span class="logo-s">media</span>
+  </a>
+  <ul class="flinks">
+    <li><a href="#">Impressum</a></li>
+    <li><a href="#">Datenschutz</a></li>
+    <li><a href="mailto:hallo@vivos.media">Kontakt</a></li>
+  </ul>
+  <span class="fcopy">© 2026 Vivos Media. Alle Rechte vorbehalten.</span>
+</footer>
+
+<script>
+// NAV
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 50), {passive: true});
+
+// 3D TILT
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  const w = card.parentElement;
+  w.addEventListener('mouseenter', () => card.style.transition = 'transform .08s ease');
+  w.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
+    const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
+    card.style.transform = `perspective(1100px) rotateX(${-y * 14}deg) rotateY(${x * 14}deg) translateZ(10px)`;
+  });
+  w.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform .7s cubic-bezier(.16,1,.3,1)';
+    card.style.transform = 'perspective(1100px) rotateX(0) rotateY(0) translateZ(0)';
+  });
+});
+
+// MAGNETIC BUTTONS
+document.querySelectorAll('.mag').forEach(btn => {
+  btn.addEventListener('mouseenter', () => btn.style.transition = 'transform .08s ease');
+  btn.addEventListener('mousemove', e => {
+    const r = btn.getBoundingClientRect();
+    btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .3}px, ${(e.clientY - r.top - r.height / 2) * .3}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1)';
+    btn.style.transform = '';
+  });
+});
+
+// SCROLL REVEAL
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, {threshold: .1});
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el => obs.observe(el));
+
+// COUNTER
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting || e.target.dataset.done) return;
+    e.target.dataset.done = '1';
+    const el = e.target.querySelector('.stat-n');
+    if (!el) return;
+    const target = +el.dataset.count, suffix = el.dataset.suffix || '', dur = 1200, t0 = performance.now();
+    (function tick(now) {
+      const ease = 1 - Math.pow(1 - Math.min((now - t0) / dur, 1), 4);
+      el.innerHTML = Math.round(ease * target) + '<em>' + suffix + '</em>';
+      if (ease < 1) requestAnimationFrame(tick);
+    })(t0);
+  });
+}, {threshold: .5});
+document.querySelectorAll('.stat').forEach(el => cObs.observe(el));
+
+// PARALLAX ORBS
+window.addEventListener('scroll', () => {
+  document.querySelector('.h-orb-a').style.transform = `translateY(${scrollY * .12}px)`;
+  document.querySelector('.h-orb-b').style.transform = `translateY(${scrollY * -.08}px)`;
+}, {passive: true});
+
+// FORM
+document.getElementById('kform').addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.bsub');
+  btn.style.opacity = '.6'; btn.style.pointerEvents = 'none';
+  setTimeout(() => {
+    document.getElementById('kform').style.display = 'none';
+    document.getElementById('fsuc').classList.add('show');
+  }, 700);
+});
+</script>
+</body>
+</html>

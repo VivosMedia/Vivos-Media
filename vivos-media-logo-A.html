@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivos Media — Logo System A</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --sirene:#FF3D14;
+  --tinte:#141210;
+  --papier:#F4EFE6;
+  --sand:#E6DFD0;
+  --beton:#8A857C;
+}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#141210;padding:3rem;}
+h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:#8A857C;margin-bottom:0.4rem;}
+.meta{font-size:11px;color:#8A857C;letter-spacing:0.05em;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid #E6DFD0;}
+
+.sec{margin-bottom:2.5rem;}
+.sec-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8A857C;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:0.5px solid #E6DFD0;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+
+.tile{border-radius:8px;overflow:hidden;border:0.5px solid #E6DFD0;}
+.ti{display:flex;align-items:center;justify-content:center;min-height:160px;padding:2rem 2.5rem;}
+.tl{font-size:10px;letter-spacing:0.1em;color:#8A857C;padding:10px 14px;border-top:0.5px solid #E6DFD0;background:white;}
+
+.lw{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-0.04em;line-height:1;}
+.ld{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--sirene);line-height:1;}
+.lm{font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:0.25em;color:var(--beton);align-self:flex-end;}
+.logo{display:inline-flex;align-items:flex-end;}
+</style>
+</head>
+<body>
+
+<h1>Vivos Media</h1>
+<div class="meta">Logo System A — Wordmark Bold · Brand Guidelines · Ed. 01 · 2026</div>
+
+<!-- PRIMÄR -->
+<div class="sec">
+  <div class="sec-label">01 — Primär</div>
+  <div class="g2">
+    <div class="tile">
+      <div class="ti" style="background:var(--tinte);">
+        <div class="logo">
+          <div class="lw" style="font-size:52px;color:var(--papier);">vivos</div>
+          <div class="ld" style="font-size:52px;">.</div>
+          <div class="lm" style="font-size:11px;margin-left:6px;margin-bottom:9px;">media</div>
+        </div>
+      </div>
+      <div class="tl">Primär — auf Tinte #141210</div>
+    </div>
+    <div class="tile">
+      <div class="ti" style="background:var(--papier);">
+        <div class="logo">
+          <div class="lw" style="font-size:52px;color:var(--tinte);">vivos</div>
+          <div class="ld" style="font-size:52px;">.</div>
+          <div class="lm" style="font-size:11px;margin-left:6px;margin-bottom:9px;">media</div>
+        </div>
+      </div>
+      <div class="tl">Primär — auf Papier #F4EFE6</div>
+    </div>
+  </div>
+</div>
+
+<!-- AKZENT -->
+<div class="sec">
+  <div class="sec-label">02 — Akzent & Neutral</div>
+  <div class="g2">
+    <div class="tile">
+      <div class="ti" style="background:var(--sirene);">
+        <div class="logo">
+          <div class="lw" style="font-size:52px;color:var(--papier);">vivos</div>
+          <div class="ld" style="font-size:52px;color:var(--tinte);">.</div>
+          <div class="lm" style="font-size:11px;margin-left:6px;margin-bottom:9px;color:rgba(244,239,230,0.55);">media</div>
+        </div>
+      </div>
+      <div class="tl">Invertiert — auf Sirene #FF3D14</div>
+    </div>
+    <div class="tile">
+      <div class="ti" style="background:var(--sand);">
+        <div class="logo">
+          <div class="lw" style="font-size:52px;color:var(--tinte);">vivos</div>
+          <div class="ld" style="font-size:52px;">.</div>
+          <div class="lm" style="font-size:11px;margin-left:6px;margin-bottom:9px;">media</div>
+        </div>
+      </div>
+      <div class="tl">Neutral — auf Sand #E6DFD0</div>
+    </div>
+  </div>
+</div>
+
+<!-- STACKED + SYMBOL -->
+<div class="sec">
+  <div class="sec-label">03 — Stacked & Symbol</div>
+  <div class="g2">
+    <div class="tile">
+      <div class="ti" style="background:var(--tinte);flex-direction:column;align-items:flex-start;padding:1.5rem 2.5rem;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:50px;color:var(--papier);letter-spacing:-0.04em;line-height:1;">vivos<span style="color:var(--sirene);">.</span></div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:6px;">
+          <div style="height:1px;width:70px;background:var(--sirene);opacity:0.6;"></div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.28em;color:var(--beton);">media</div>
+        </div>
+      </div>
+      <div class="tl">Stacked — Social Media & Quadratformate</div>
+    </div>
+    <div class="tile">
+      <div class="ti" style="background:var(--papier);flex-direction:column;gap:14px;">
+        <div style="display:flex;gap:10px;">
+          <div style="width:52px;height:52px;background:var(--sirene);display:flex;align-items:center;justify-content:center;border-radius:4px;">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--papier);letter-spacing:-0.04em;">vm</span>
+          </div>
+          <div style="width:52px;height:52px;background:var(--tinte);display:flex;align-items:center;justify-content:center;border-radius:4px;">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--papier);letter-spacing:-0.04em;">vm</span>
+          </div>
+          <div style="width:52px;height:52px;background:var(--papier);border:1.5px solid var(--tinte);display:flex;align-items:center;justify-content:center;border-radius:4px;">
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--tinte);letter-spacing:-0.04em;">vm</span>
+          </div>
+        </div>
+        <div style="font-size:9px;letter-spacing:0.15em;color:var(--beton);">Favicon · App-Icon · Stempel</div>
+      </div>
+      <div class="tl">Symbol Only — vm Monogramm</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKALIERUNG -->
+<div class="sec">
+  <div class="sec-label">04 — Skalierung</div>
+  <div class="tile">
+    <div class="ti" style="background:var(--tinte);flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2.5rem 3rem;">
+      <div class="logo"><div class="lw" style="font-size:52px;color:var(--papier);">vivos</div><div class="ld" style="font-size:52px;">.</div><div class="lm" style="font-size:11px;margin-left:5px;margin-bottom:9px;">media</div></div>
+      <div class="logo"><div class="lw" style="font-size:34px;color:var(--papier);">vivos</div><div class="ld" style="font-size:34px;">.</div><div class="lm" style="font-size:9px;margin-left:4px;margin-bottom:6px;">media</div></div>
+      <div class="logo"><div class="lw" style="font-size:22px;color:var(--papier);">vivos</div><div class="ld" style="font-size:22px;">.</div><div class="lm" style="font-size:7px;margin-left:3px;margin-bottom:4px;">media</div></div>
+      <div class="logo"><div class="lw" style="font-size:14px;color:var(--papier);">vivos</div><div class="ld" style="font-size:14px;">.</div><div class="lm" style="font-size:6px;margin-left:2px;margin-bottom:2px;">media</div></div>
+    </div>
+    <div class="tl">XL → XS — Lesbarkeit auf allen Größen geprüft</div>
+  </div>
+</div>
+
+<!-- SCHUTZZONE -->
+<div class="sec">
+  <div class="sec-label">05 — Schutzzone</div>
+  <div class="tile">
+    <div class="ti" style="background:var(--papier);flex-direction:column;gap:10px;">
+      <div style="border:1.5px dashed var(--beton);padding:24px;border-radius:4px;display:inline-block;">
+        <div class="logo">
+          <div class="lw" style="font-size:40px;color:var(--tinte);">vivos</div>
+          <div class="ld" style="font-size:40px;">.</div>
+          <div class="lm" style="font-size:9px;margin-left:4px;margin-bottom:7px;">media</div>
+        </div>
+      </div>
+      <div style="font-size:9px;letter-spacing:0.1em;color:var(--beton);">Mindestabstand = Höhe des Kleinbuchstabens "v" auf allen Seiten</div>
+    </div>
+    <div class="tl">Clearspace — kein anderes Element darf näher ran</div>
+  </div>
+</div>
+
+<!-- DON'TS -->
+<div class="sec" style="margin-bottom:0;">
+  <div class="sec-label">06 — Don'ts</div>
+  <div class="g3">
+    <div class="tile">
+      <div class="ti" style="background:var(--papier);">
+        <div class="logo" style="opacity:0.18;">
+          <div class="lw" style="font-size:28px;color:var(--tinte);">vivos</div>
+          <div class="ld" style="font-size:28px;">.</div>
+          <div class="lm" style="font-size:8px;margin-left:3px;margin-bottom:5px;">media</div>
+        </div>
+      </div>
+      <div class="tl">✕ Nicht transparent</div>
+    </div>
+    <div class="tile">
+      <div class="ti" style="background:var(--papier);">
+        <div style="display:inline-flex;align-items:flex-end;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px;color:var(--beton);letter-spacing:-0.04em;line-height:1;">vivos</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px;color:var(--beton);line-height:1;">.</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:0.25em;color:var(--beton);align-self:flex-end;margin-left:3px;margin-bottom:5px;">media</div>
+        </div>
+      </div>
+      <div class="tl">✕ Nicht in Beton — kein Kontrast</div>
+    </div>
+    <div class="tile">
+      <div class="ti" style="background:var(--papier);">
+        <div style="display:inline-flex;align-items:flex-end;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;color:var(--tinte);letter-spacing:0.1em;line-height:1;">VIVOS</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;color:var(--sirene);letter-spacing:0.1em;line-height:1;">.</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:7px;letter-spacing:0.25em;color:var(--beton);align-self:flex-end;margin-left:3px;margin-bottom:4px;">MEDIA</div>
+        </div>
+      </div>
+      <div class="tl">✕ Nicht in Caps / gesperrt</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
