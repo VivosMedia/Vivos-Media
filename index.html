@@ -4,9 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vivos Media — Webseiten & Brand Assets</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --r:#FF3D14;   /* Sirene */
@@ -39,7 +58,8 @@ nav.on .nav-btn{color:var(--k) !important;}
 .nav-btn:hover{box-shadow:0 8px 32px rgba(255,61,20,.4);}
 
 /* HERO — dark, dramatic opener */
-#hero{height:100vh;min-height:680px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4rem 5.5rem;position:relative;overflow:hidden;background:var(--k);}
+/* ── HERO ──────────────────────────────────────────────── */
+#hero{height:97vh;min-height:620px;position:relative;display:flex;align-items:center;padding:0 4rem;overflow:hidden;background:var(--k);}
 .h-bg{position:absolute;inset:0;}
 .h-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(244,239,230,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(244,239,230,.025) 1px,transparent 1px);background-size:72px 72px;}
 .h-orb{position:absolute;border-radius:50%;filter:blur(110px);animation:bob 9s ease-in-out infinite;}
@@ -47,10 +67,14 @@ nav.on .nav-btn{color:var(--k) !important;}
 .h-orb-b{width:380px;height:380px;background:var(--r);opacity:.05;bottom:60px;left:35%;animation-delay:-5s;}
 @keyframes bob{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-50px) scale(1.06);}}
 
-.h-content{position:relative;z-index:1;}
+/* Two-column inner wrapper */
+.h-inner{display:flex;align-items:center;gap:5rem;width:100%;position:relative;z-index:1;}
+
+/* Left column: all text as one tight block */
+.h-content{flex:1;min-width:0;}
 .h-tag{font-size:10.5px;letter-spacing:.32em;color:var(--r);text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:12px;opacity:0;animation:up .8s var(--ease) .15s forwards;}
 .h-tag::before{content:'';width:36px;height:1px;background:var(--r);}
-.h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(58px,8.5vw,128px);line-height:.9;letter-spacing:-.045em;color:var(--p);margin-bottom:3rem;}
+.h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(48px,7vw,110px);line-height:.9;letter-spacing:-.045em;color:var(--p);margin-bottom:2.5rem;}
 .h1 .ln{display:block;overflow:hidden;}
 .h1 .lni{display:block;opacity:0;transform:translateY(104%);animation:slide 1s var(--ease) forwards;}
 .h1 .ln:nth-child(1) .lni{animation-delay:.35s;}
@@ -59,9 +83,30 @@ nav.on .nav-btn{color:var(--k) !important;}
 .h1 .ol{-webkit-text-stroke:2px var(--p);color:transparent;}
 @keyframes slide{to{opacity:1;transform:translateY(0);}}
 @keyframes up{to{opacity:1;transform:translateY(0);}}
-.h-bot{display:flex;align-items:flex-end;justify-content:space-between;opacity:0;animation:up .8s var(--ease) 1s forwards;}
-.h-sub{font-size:16px;font-weight:300;color:var(--g);max-width:360px;line-height:1.65;}
-.h-acts{display:flex;align-items:center;gap:1.5rem;}
+.h-bot{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;opacity:0;animation:up .8s var(--ease) 1s forwards;}
+.h-sub{font-size:15px;font-weight:300;color:var(--g);max-width:340px;line-height:1.65;}
+.h-acts{display:flex;align-items:center;gap:1.5rem;flex-shrink:0;}
+
+/* Right column: floating browser mockup */
+.h-mock{flex-shrink:0;width:400px;border-radius:10px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.45),0 12px 32px rgba(0,0,0,.28);opacity:0;animation:hmock-in .9s var(--ease) 1.2s forwards,hmock-float 7s ease-in-out 2.1s infinite;}
+.h-mock .pbscreen{min-height:230px;padding:2rem 1.8rem;}
+@keyframes hmock-in{from{opacity:0;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(20px);}to{opacity:1;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(0);}}
+@keyframes hmock-float{0%,100%{transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(0);}50%{transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(-10px);}}
+
+/* Scroll arrow */
+.h-arrow{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);font-size:20px;color:var(--g);animation:harrow 2.4s ease-in-out infinite;z-index:1;line-height:1;opacity:.6;}
+@keyframes harrow{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(7px);}}
+
+/* Mobile: single column, mockup below text */
+@media(max-width:860px){
+  #hero{padding:5rem 1.5rem 2.5rem;align-items:flex-start;}
+  .h-inner{flex-direction:column;gap:2.5rem;align-items:flex-start;}
+  .h-mock{width:100%;transform:none;animation:hmock-in .9s var(--ease) 1.2s forwards;}
+  @keyframes hmock-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  .h-mock .pbscreen{min-height:160px;}
+  .h-bot{flex-direction:column;align-items:flex-start;gap:1.5rem;}
+  .h-arrow{display:none;}
+}
 
 /* BUTTONS */
 .btn{position:relative;display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--k);background:var(--r);padding:16px 30px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;overflow:hidden;transition:box-shadow .4s;}
@@ -72,13 +117,6 @@ nav.on .nav-btn{color:var(--k) !important;}
 .btn:hover svg{transform:translateX(4px);}
 .btn-g{font-size:13px;font-weight:400;color:rgba(138,133,124,.8);text-decoration:none;border-bottom:1px solid rgba(138,133,124,.3);padding-bottom:2px;transition:color .3s,border-color .3s;}
 .btn-g:hover{color:var(--p);border-color:rgba(244,239,230,.5);}
-
-/* SCROLL RING */
-.scroll-ind{position:absolute;bottom:5rem;right:4rem;z-index:1;opacity:0;animation:up .8s var(--ease) 1.4s forwards;}
-.scroll-svg{animation:spin 9s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.scroll-dot{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;background:var(--r);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.6);}}
 
 /* STATS — Sand */
 #stats{background:var(--s);padding:2.8rem 4rem;border-bottom:.5px solid rgba(20,18,16,.08);}
@@ -260,6 +298,7 @@ footer .logo-w{color:var(--p);}
 .addon-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;letter-spacing:-.04em;color:var(--k);line-height:1;}
 .addon-num em{color:var(--r);font-style:normal;}
 .addon-period{font-size:11px;font-weight:300;color:var(--g);margin-top:.25rem;letter-spacing:.04em;}
+.rate-note{font-size:12.5px;font-weight:300;color:var(--g);text-align:center;margin:1.6rem 0 0;letter-spacing:.04em;}
 
 /* PORTFOLIO */
 #portfolio{background:var(--k);}
@@ -311,38 +350,49 @@ footer .logo-w{color:var(--p);}
     <div class="h-orb h-orb-a"></div>
     <div class="h-orb h-orb-b"></div>
   </div>
-  <div class="h-content">
-    <div class="h-tag">Berlin · Für lokale Läden</div>
-    <h1 class="h1">
-      <span class="ln"><span class="lni">Dein Laden<span class="ac">.</span></span></span>
-      <span class="ln"><span class="lni"><span class="ol">Online</span> sichtbar<span class="ac">.</span></span></span>
-    </h1>
-    <div class="h-bot">
-      <p class="h-sub">Wir machen Webseiten und Brand Assets für Berliner Cafés, Friseure, Restaurants und Boutiquen – zu Preisen die sich wirklich lohnen.</p>
-      <div class="h-acts">
-        <a href="#kontakt" class="btn mag">
-          <span class="bt">Kostenlos anfragen</span>
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3.5 8.5h10M9 4l4.5 4.5L9 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#leistungen" class="btn-g">Unsere Leistungen ansehen →</a>
+  <div class="h-inner">
+    <div class="h-content">
+      <div class="h-tag">Berlin · Für lokale Läden</div>
+      <h1 class="h1">
+        <span class="ln"><span class="lni">Dein Laden<span class="ac">.</span></span></span>
+        <span class="ln"><span class="lni"><span class="ol">Online</span> sichtbar<span class="ac">.</span></span></span>
+      </h1>
+      <div class="h-bot">
+        <p class="h-sub">Wir machen Webseiten und Brand Assets für Berliner Cafés, Friseure, Restaurants und Boutiquen – zu Preisen die sich wirklich lohnen.</p>
+        <div class="h-acts">
+          <a href="#kontakt" class="btn mag">
+            <span class="bt">Kostenlos anfragen</span>
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3.5 8.5h10M9 4l4.5 4.5L9 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#leistungen" class="btn-g">Unsere Leistungen ansehen →</a>
+        </div>
+      </div>
+    </div>
+    <div class="h-mock">
+      <div class="pbrowser" style="background:var(--s);">
+        <div class="pbrowser-bar">
+          <div class="pb-dot" style="background:#FF3D14;"></div>
+          <div class="pb-dot" style="background:#E6DFD0;"></div>
+          <div class="pb-dot" style="background:#8A857C;"></div>
+          <div class="pb-url">café-demo.vivos.media</div>
+        </div>
+        <div class="pbscreen" style="background:#F4EFE6;">
+          <span style="font-size:9px;letter-spacing:.25em;color:var(--r);text-transform:uppercase;">CAFÉ · BERLIN</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;color:var(--k);letter-spacing:-.03em;line-height:1;">Röstwerk</span>
+          <div style="width:32px;height:1px;background:var(--r);margin:.2rem 0;"></div>
+          <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Specialty Coffee & Brunch</span>
+          <div style="margin-top:.8rem;background:var(--r);color:var(--k);font-family:'Space Grotesk',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:2px;display:inline-block;">Tisch reservieren</div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="scroll-ind">
-    <svg class="scroll-svg" width="80" height="80" viewBox="0 0 80 80">
-      <defs><path id="c" d="M40,40 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/></defs>
-      <text font-family="DM Sans,sans-serif" font-size="9.5" letter-spacing="2.2" fill="#8A857C">
-        <textPath href="#c">scroll nach unten · scroll nach unten ·</textPath>
-      </text>
-    </svg>
-    <div class="scroll-dot"></div>
-  </div>
+  <div class="h-arrow">↓</div>
 </section>
 
 <!-- STATS — Sand -->
 <div id="stats">
   <div class="stats">
-    <div class="stat rv"><div class="stat-n" data-count="100" data-suffix="%">0</div><div class="stat-l">Zufriedenheit</div></div>
+    <div class="stat rv"><div class="stat-n" data-count="14" data-suffix="">0</div><div class="stat-l">Ø Tage bis Launch</div></div>
     <div class="stat rv d1"><div class="stat-n" data-count="24" data-suffix="h">0</div><div class="stat-l">Durchschn. Reaktionszeit</div></div>
     <div class="stat rv d2"><div class="stat-n" data-count="1" data-suffix="">0</div><div class="stat-l">Berliner Gründer</div></div>
     <div class="stat rv d3"><div class="stat-n" data-count="0" data-suffix="€">0</div><div class="stat-l">Erstgespräch</div></div>
@@ -446,6 +496,9 @@ footer .logo-w{color:var(--p);}
     </div>
   </div>
 
+  <!-- Ratenzahlung Hinweis -->
+  <p class="rate-note rv">Ratenzahlung möglich &mdash; einfach beim Erstgespräch ansprechen.</p>
+
   <!-- Kombi-Angebot Banner -->
   <div class="combo rv d3">
     <div class="combo-left">
@@ -470,33 +523,32 @@ footer .logo-w{color:var(--p);}
 
   <div class="pgrid">
 
-    <!-- Karte 1 — Röstwerk Berlin -->
+    <!-- Karte 1 — Steinmetz Antiquitäten -->
     <div class="pcard pcard--done rv d1">
       <div class="pimg">
-        <a href="#" class="poverlay" aria-label="Röstwerk Berlin ansehen"></a>
+        <a href="https://steinmetz-antiquitaeten-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" class="poverlay" aria-label="Steinmetz Antiquitäten ansehen"></a>
         <div class="pbrowser" style="background:var(--s);">
           <div class="pbrowser-bar">
             <div class="pb-dot" style="background:#FF3D14;"></div>
             <div class="pb-dot" style="background:#E6DFD0;"></div>
             <div class="pb-dot" style="background:#8A857C;"></div>
-            <div class="pb-url">café-demo.vivos.media</div>
+            <div class="pb-url">steinmetz-antiquitaeten-webseite.vercel.app</div>
           </div>
           <div class="pbscreen" style="background:#F4EFE6;">
-            <span style="font-size:9px;letter-spacing:.25em;color:var(--r);text-transform:uppercase;">CAFÉ · BERLIN</span>
-            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;color:var(--k);letter-spacing:-.03em;line-height:1;">Röstwerk</span>
+            <span style="font-size:9px;letter-spacing:.25em;color:var(--r);text-transform:uppercase;">ANTIQUITÄTEN · BERLIN</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px;color:var(--k);letter-spacing:-.03em;line-height:1;">Steinmetz</span>
             <div style="width:32px;height:1px;background:var(--r);"></div>
-            <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Specialty Coffee</span>
+            <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Antiquitäten & Raritäten</span>
           </div>
         </div>
       </div>
       <div class="pmeta">
         <div class="ptags">
-          <span class="ptag-pill">Café</span>
+          <span class="ptag-pill">Antiquitäten</span>
           <span class="ptag-pill">Webseite</span>
-          <span class="ptag-pill">Brand Assets</span>
         </div>
-        <div class="ptitle">Röstwerk Berlin</div>
-        <a href="#" class="plink">Website ansehen →</a>
+        <div class="ptitle">Steinmetz Antiquitäten</div>
+        <a href="https://steinmetz-antiquitaeten-webseite.vercel.app/" target="_blank" rel="noopener noreferrer" class="plink">Website ansehen →</a>
       </div>
     </div>
 
@@ -559,7 +611,7 @@ footer .logo-w{color:var(--p);}
       </div>
       <div class="wpt rv d1">
         <span class="wn">02</span>
-        <div class="wt"><h3>Festpreise ohne Überraschungen</h3><p>Webseite ab 499 €, Brand-Paket ab 299 €. Was wir sagen, das kostet es auch.</p></div>
+        <div class="wt"><h3>Festpreise ohne Überraschungen</h3><p>Webseite ab 499 €, Brand-Paket ab 299 €, beides zusammen 699 €. Ratenzahlung möglich — kein Kleingedrucktes.</p></div>
       </div>
       <div class="wpt rv d2">
         <span class="wn">03</span>
@@ -692,8 +744,8 @@ footer .logo-w{color:var(--p);}
     <span class="logo-w">vivos</span><span class="logo-d">.</span><span class="logo-s">media</span>
   </a>
   <ul class="flinks">
-    <li><a href="#">Impressum</a></li>
-    <li><a href="#">Datenschutz</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
     <li><a href="mailto:hallo@vivos.media">Kontakt</a></li>
   </ul>
   <span class="fcopy">© 2026 Vivos Media. Alle Rechte vorbehalten.</span>
