@@ -218,6 +218,49 @@ footer .logo-w{color:var(--p);}
 .rvr.on{opacity:1;transform:translateX(0);}
 .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
 
+/* KOMBI-BANNER */
+.combo{background:var(--r);border-radius:10px;padding:2.5rem 3rem;margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.combo-left{flex:1;}
+.combo-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(20,18,16,.45);display:block;margin-bottom:.7rem;}
+.combo-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.03em;color:var(--k);line-height:1.1;}
+.combo-title span{opacity:.45;}
+.combo-desc{font-size:13.5px;font-weight:300;color:rgba(20,18,16,.6);margin-top:.6rem;line-height:1.55;}
+.combo-price{display:flex;flex-direction:column;align-items:center;text-align:center;flex-shrink:0;padding:0 2rem;}
+.combo-only{font-size:12px;font-weight:300;color:rgba(20,18,16,.55);letter-spacing:.08em;}
+.combo-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:62px;letter-spacing:-.045em;color:var(--k);line-height:.9;}
+.combo-save{font-size:10.5px;color:rgba(20,18,16,.45);margin-top:.5rem;letter-spacing:.06em;}
+.combo-cta{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--k);text-decoration:none;border:1.5px solid rgba(20,18,16,.3);padding:14px 26px;border-radius:3px;white-space:nowrap;transition:background .3s,border-color .3s;flex-shrink:0;}
+.combo-cta:hover{background:rgba(20,18,16,.12);border-color:rgba(20,18,16,.6);}
+
+/* CARD PREIS */
+.cprice{margin:1.6rem 0 1.3rem;padding-top:1.3rem;border-top:.5px solid rgba(20,18,16,.08);}
+.cb .cprice{border-top:.5px solid rgba(244,239,230,.08);}
+.cprice-label{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--g);display:block;margin-bottom:.3rem;}
+.cprice-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;letter-spacing:-.045em;color:var(--k);line-height:1;}
+.cb .cprice-num{color:var(--p);}
+.cprice-num em{color:var(--r);font-style:normal;}
+
+/* ÜBER MICH */
+.ueber-mich{background:#fff;border:.5px solid rgba(20,18,16,.1);border-radius:10px;padding:2.5rem 3rem;margin-top:14px;display:flex;align-items:center;gap:3rem;box-shadow:0 2px 12px rgba(20,18,16,.04);}
+.um-img{width:120px;height:120px;border-radius:50%;background:var(--s);flex-shrink:0;display:flex;align-items:center;justify-content:center;border:.5px solid rgba(20,18,16,.08);overflow:hidden;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.03em;color:var(--g);}
+.um-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.025em;color:var(--k);line-height:1;}
+.um-role{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--r);margin-top:.4rem;margin-bottom:1rem;}
+.um-text{font-size:14px;font-weight:300;color:var(--g);line-height:1.7;max-width:560px;}
+
+/* ADD-ON BETREUUNG */
+.addon{background:#fff;border:.5px solid rgba(20,18,16,.1);border-radius:10px;padding:1.8rem 3rem;margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:2rem;box-shadow:0 2px 12px rgba(20,18,16,.04);}
+.addon-left{flex:1;}
+.addon-tag{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--g);display:block;margin-bottom:.5rem;}
+.addon-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.02em;color:var(--k);}
+.addon-desc{font-size:13px;font-weight:300;color:var(--g);margin-top:.35rem;line-height:1.55;}
+.addon-feats{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:.9rem;}
+.addon-feats span{font-size:11.5px;font-weight:300;color:var(--g);display:flex;align-items:center;gap:6px;}
+.addon-feats span::before{content:'';width:12px;height:1px;background:var(--r);flex-shrink:0;}
+.addon-price{display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex-shrink:0;}
+.addon-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:42px;letter-spacing:-.04em;color:var(--k);line-height:1;}
+.addon-num em{color:var(--r);font-style:normal;}
+.addon-period{font-size:11px;font-weight:300;color:var(--g);margin-top:.25rem;letter-spacing:.04em;}
+
 /* PORTFOLIO */
 #portfolio{background:var(--k);}
 #portfolio .sh{color:var(--p);}
@@ -299,9 +342,9 @@ footer .logo-w{color:var(--p);}
 <!-- STATS — Sand -->
 <div id="stats">
   <div class="stats">
-    <div class="stat rv"><div class="stat-n" data-count="10" data-suffix="+">0</div><div class="stat-l">Zufriedene Kunden</div></div>
+    <div class="stat rv"><div class="stat-n" data-count="100" data-suffix="%">0</div><div class="stat-l">Zufriedenheit</div></div>
     <div class="stat rv d1"><div class="stat-n" data-count="24" data-suffix="h">0</div><div class="stat-l">Durchschn. Reaktionszeit</div></div>
-    <div class="stat rv d2"><div class="stat-n" data-count="2" data-suffix="">0</div><div class="stat-l">Berliner Gründer</div></div>
+    <div class="stat rv d2"><div class="stat-n" data-count="1" data-suffix="">0</div><div class="stat-l">Berliner Gründer</div></div>
     <div class="stat rv d3"><div class="stat-n" data-count="0" data-suffix="€">0</div><div class="stat-l">Erstgespräch</div></div>
   </div>
 </div>
@@ -341,8 +384,11 @@ footer .logo-w{color:var(--p);}
             <li>Mobil optimiert</li>
             <li>Speisekarte / Preisliste integrierbar</li>
             <li>In 2 Wochen live</li>
-            <li>Ab 399 €</li>
           </ul>
+          <div class="cprice">
+            <span class="cprice-label">ab nur</span>
+            <div class="cprice-num">499<em>€</em></div>
+          </div>
           <a href="#kontakt" class="clink">Webseite anfragen <span>→</span></a>
         </div>
       </div>
@@ -369,12 +415,50 @@ footer .logo-w{color:var(--p);}
             <li>Instagram-Vorlagen (editierbar)</li>
             <li>Visitenkarten-Design</li>
             <li>Alles in Canva bearbeitbar</li>
-            <li>Ab 199 €</li>
           </ul>
+          <div class="cprice">
+            <span class="cprice-label">ab nur</span>
+            <div class="cprice-num">299<em>€</em></div>
+          </div>
           <a href="#kontakt" class="clink">Brand anfragen <span>→</span></a>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Optionales Add-on -->
+  <div class="addon rv d3">
+    <div class="addon-left">
+      <span class="addon-tag">Optionales Add-on</span>
+      <div class="addon-title">Monatliche Website-Betreuung</div>
+      <p class="addon-desc">Wir halten deine Seite aktuell — damit du dich auf dein Geschäft konzentrieren kannst.</p>
+      <div class="addon-feats">
+        <span>Inhalte &amp; Texte aktualisieren</span>
+        <span>Technische Pflege &amp; Updates</span>
+        <span>Schneller Support per WhatsApp</span>
+        <span>Monatlich kündbar</span>
+      </div>
+    </div>
+    <div class="addon-price">
+      <div class="addon-num">60<em>€</em></div>
+      <div class="addon-period">pro Monat · monatlich kündbar</div>
+      <a href="#kontakt" class="btn" style="margin-top:1.2rem;padding:12px 24px;font-size:11px;"><span class="bt">Dazu buchen</span></a>
+    </div>
+  </div>
+
+  <!-- Kombi-Angebot Banner -->
+  <div class="combo rv d3">
+    <div class="combo-left">
+      <span class="combo-tag">Kombi-Angebot</span>
+      <div class="combo-title">Webseite <span>+</span> Brand Assets</div>
+      <p class="combo-desc">Alles aus einer Hand — ein Preis, ein Ansprechpartner, zwei Wochen.<br>Du sparst 99 € gegenüber dem Einzelkauf.</p>
+    </div>
+    <div class="combo-price">
+      <span class="combo-only">nur</span>
+      <span class="combo-num">699€</span>
+      <span class="combo-save">statt 798 € einzeln</span>
+    </div>
+    <a href="#kontakt" class="combo-cta">Jetzt anfragen →</a>
   </div>
 </section>
 
@@ -475,7 +559,7 @@ footer .logo-w{color:var(--p);}
       </div>
       <div class="wpt rv d1">
         <span class="wn">02</span>
-        <div class="wt"><h3>Festpreise ohne Überraschungen</h3><p>Webseite ab 399 €, Brand-Paket ab 199 €. Was wir sagen, das kostet es auch.</p></div>
+        <div class="wt"><h3>Festpreise ohne Überraschungen</h3><p>Webseite ab 499 €, Brand-Paket ab 299 €. Was wir sagen, das kostet es auch.</p></div>
       </div>
       <div class="wpt rv d2">
         <span class="wn">03</span>
@@ -496,6 +580,19 @@ footer .logo-w{color:var(--p);}
           <div class="wbox-ls">media</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER MICH — Papier -->
+<section id="ueber" style="background:var(--p);">
+  <div class="stag rv">Wer steckt dahinter</div>
+  <div class="ueber-mich rv d1" style="margin-top:0;">
+    <div class="um-img">TZ</div>
+    <div class="um-content">
+      <div class="um-name">Theo Zybell</div>
+      <div class="um-role">Gründer · Vivos Media</div>
+      <p class="um-text">Ich bin in Berlin aufgewachsen und liebe die lokalen Läden, die dieser Stadt ihren Charakter geben. Mir ist aufgefallen, dass viele davon online kaum sichtbar sind – nicht weil sie schlecht sind, sondern weil niemand die Zeit hat, sich darum zu kümmern. Genau das ändere ich. Kein Agentur-Apparat, keine versteckten Kosten – nur faire Arbeit für Läden, die es verdienen.</p>
     </div>
   </div>
 </section>
