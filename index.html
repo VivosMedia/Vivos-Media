@@ -67,14 +67,14 @@ nav.on .nav-btn{color:var(--k) !important;}
 .h-orb-b{width:380px;height:380px;background:var(--r);opacity:.05;bottom:60px;left:35%;animation-delay:-5s;}
 @keyframes bob{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-50px) scale(1.06);}}
 
-/* Two-column inner wrapper */
-.h-inner{display:flex;align-items:center;gap:5rem;width:100%;position:relative;z-index:1;}
+/* Hero inner wrapper */
+.h-inner{width:100%;position:relative;z-index:1;}
 
-/* Left column: all text as one tight block */
-.h-content{flex:1;min-width:0;}
+/* Full-width text block */
+.h-content{width:100%;}
 .h-tag{font-size:10.5px;letter-spacing:.32em;color:var(--r);text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:12px;opacity:0;animation:up .8s var(--ease) .15s forwards;}
 .h-tag::before{content:'';width:36px;height:1px;background:var(--r);}
-.h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(48px,7vw,110px);line-height:.9;letter-spacing:-.045em;color:var(--p);margin-bottom:2.5rem;}
+.h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(52px,9.5vw,140px);line-height:.88;letter-spacing:-.045em;color:var(--p);margin-bottom:3rem;}
 .h1 .ln{display:block;overflow:hidden;}
 .h1 .lni{display:block;opacity:0;transform:translateY(104%);animation:slide 1s var(--ease) forwards;}
 .h1 .ln:nth-child(1) .lni{animation-delay:.35s;}
@@ -83,15 +83,9 @@ nav.on .nav-btn{color:var(--k) !important;}
 .h1 .ol{-webkit-text-stroke:2px var(--p);color:transparent;}
 @keyframes slide{to{opacity:1;transform:translateY(0);}}
 @keyframes up{to{opacity:1;transform:translateY(0);}}
-.h-bot{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;opacity:0;animation:up .8s var(--ease) 1s forwards;}
-.h-sub{font-size:15px;font-weight:300;color:var(--g);max-width:340px;line-height:1.65;}
+.h-bot{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;opacity:0;animation:up .8s var(--ease) 1s forwards;}
+.h-sub{font-size:16px;font-weight:300;color:var(--g);max-width:480px;line-height:1.65;}
 .h-acts{display:flex;align-items:center;gap:1.5rem;flex-shrink:0;}
-
-/* Right column: floating browser mockup */
-.h-mock{flex-shrink:0;width:400px;border-radius:10px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.45),0 12px 32px rgba(0,0,0,.28);opacity:0;animation:hmock-in .9s var(--ease) 1.2s forwards,hmock-float 7s ease-in-out 2.1s infinite;}
-.h-mock .pbscreen{min-height:230px;padding:2rem 1.8rem;}
-@keyframes hmock-in{from{opacity:0;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(20px);}to{opacity:1;transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(0);}}
-@keyframes hmock-float{0%,100%{transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(0);}50%{transform:perspective(1200px) rotateY(-5deg) rotateX(2deg) translateY(-10px);}}
 
 /* Scroll arrow */
 .h-arrow{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);font-size:20px;color:var(--g);animation:harrow 2.4s ease-in-out infinite;z-index:1;line-height:1;opacity:.6;}
@@ -105,10 +99,6 @@ nav.on .nav-btn{color:var(--k) !important;}
 
   /* HERO */
   #hero{padding:5rem 1.5rem 2.5rem;align-items:flex-start;}
-  .h-inner{flex-direction:column;gap:2.5rem;align-items:flex-start;}
-  .h-mock{width:100%;transform:none;animation:hmock-in .9s var(--ease) 1.2s forwards;}
-  @keyframes hmock-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  .h-mock .pbscreen{min-height:160px;}
   .h-bot{flex-direction:column;align-items:flex-start;gap:1.5rem;}
   .h-arrow{display:none;}
 
@@ -410,14 +400,11 @@ footer .logo-w{color:var(--p);}
 
   /* ── HERO ─────────────────────────────────────────────── */
   #hero{padding:5rem 1.5rem 2.5rem;align-items:flex-start;}
-  .h-inner{flex-direction:column;gap:2rem;align-items:stretch;}
-  .h1{font-size:clamp(36px,11vw,58px) !important;}
+  .h1{font-size:clamp(38px,12vw,68px) !important;}
   .h-bot{flex-direction:column;align-items:flex-start;gap:1.2rem;}
   .h-acts{flex-direction:column;align-items:stretch;width:100%;}
   .h-acts .btn{justify-content:center;}
   .h-acts .btn-g{text-align:center;}
-  .h-mock{width:100%;transform:none !important;animation:none !important;opacity:1 !important;}
-  .h-mock .pbscreen{min-height:140px;}
 
   /* ── STATS ────────────────────────────────────────────── */
   #stats{padding:2rem 1.5rem !important;}
@@ -511,23 +498,6 @@ footer .logo-w{color:var(--p);}
             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3.5 8.5h10M9 4l4.5 4.5L9 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#leistungen" class="btn-g">Meine Leistungen ansehen →</a>
-        </div>
-      </div>
-    </div>
-    <div class="h-mock">
-      <div class="pbrowser" style="background:var(--s);">
-        <div class="pbrowser-bar">
-          <div class="pb-dot" style="background:#FF3D14;"></div>
-          <div class="pb-dot" style="background:#E6DFD0;"></div>
-          <div class="pb-dot" style="background:#8A857C;"></div>
-          <div class="pb-url">café-demo.vivos.media</div>
-        </div>
-        <div class="pbscreen" style="background:#F4EFE6;">
-          <span style="font-size:9px;letter-spacing:.25em;color:var(--r);text-transform:uppercase;">CAFÉ · BERLIN</span>
-          <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:36px;color:var(--k);letter-spacing:-.03em;line-height:1;">Röstwerk</span>
-          <div style="width:32px;height:1px;background:var(--r);margin:.2rem 0;"></div>
-          <span style="font-family:'DM Sans',sans-serif;font-weight:300;font-size:12px;color:var(--g);">Specialty Coffee & Brunch</span>
-          <div style="margin-top:.8rem;background:var(--r);color:var(--k);font-family:'Space Grotesk',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:2px;display:inline-block;">Tisch reservieren</div>
         </div>
       </div>
     </div>
