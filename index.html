@@ -813,13 +813,13 @@ footer .logo-w{color:var(--p);}
     <div class="rvr">
       <form id="kform">
         <div class="fgrid">
-          <div class="fg rv"><label class="fl">Vorname</label><input type="text" class="fi" placeholder="Max" required></div>
-          <div class="fg rv d1"><label class="fl">Nachname</label><input type="text" class="fi" placeholder="Mustermann" required></div>
-          <div class="fg rv d1"><label class="fl">E-Mail</label><input type="email" class="fi" placeholder="max@mustermann.de" required></div>
-          <div class="fg rv d2"><label class="fl">Unternehmen</label><input type="text" class="fi" placeholder="Muster GmbH"></div>
+          <div class="fg rv"><label class="fl">Vorname</label><input type="text" name="vorname" class="fi" placeholder="Max" required></div>
+          <div class="fg rv d1"><label class="fl">Nachname</label><input type="text" name="nachname" class="fi" placeholder="Mustermann" required></div>
+          <div class="fg rv d1"><label class="fl">E-Mail</label><input type="email" name="_replyto" class="fi" placeholder="max@mustermann.de" required></div>
+          <div class="fg rv d2"><label class="fl">Unternehmen</label><input type="text" name="unternehmen" class="fi" placeholder="Muster GmbH"></div>
           <div class="fg full rv d2">
             <label class="fl">Ich interessiere mich für</label>
-            <select class="fsel" required>
+            <select name="interesse" class="fsel" required>
               <option value="" disabled selected>Bitte wählen …</option>
               <option value="webseite">Webseite</option>
               <option value="brand">Brand Assets</option>
@@ -829,7 +829,7 @@ footer .logo-w{color:var(--p);}
           </div>
           <div class="fg full rv d3">
             <label class="fl">Dein Projekt</label>
-            <textarea class="fta" placeholder="Erzähl mir kurz, was du dir vorstellst. Je mehr Details, desto besser kann ich helfen …" required></textarea>
+            <textarea name="projekt" class="fta" placeholder="Erzähl mir kurz, was du dir vorstellst. Je mehr Details, desto besser kann ich helfen …" required></textarea>
           </div>
         </div>
         <p class="fnote rv">Alle Anfragen werden vertraulich behandelt. Kein Spam, versprochen.</p>
@@ -926,12 +926,25 @@ window.addEventListener('scroll', () => {
 // FORM
 document.getElementById('kform').addEventListener('submit', e => {
   e.preventDefault();
-  const btn = e.target.querySelector('.bsub');
+  const form = e.target;
+  const btn = form.querySelector('.bsub');
   btn.style.opacity = '.6'; btn.style.pointerEvents = 'none';
-  setTimeout(() => {
-    document.getElementById('kform').style.display = 'none';
-    document.getElementById('fsuc').classList.add('show');
-  }, 700);
+  fetch('https://formspree.io/f/xqejjpge', {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(res => {
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('fsuc').classList.add('show');
+    } else {
+      btn.style.opacity = '1'; btn.style.pointerEvents = '';
+      alert('Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib direkt an hallo@vivos.media.');
+    }
+  }).catch(() => {
+    btn.style.opacity = '1'; btn.style.pointerEvents = '';
+    alert('Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib direkt an hallo@vivos.media.');
+  });
 });
 </script>
 </body>
