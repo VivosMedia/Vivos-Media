@@ -392,6 +392,84 @@ footer .logo-w{color:var(--p);}
 .pb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .pb-url{flex:1;background:rgba(20,18,16,.08);border-radius:20px;height:14px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:300;color:var(--g);margin:0 6px;letter-spacing:.02em;}
 .pbscreen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE  ≤ 768 px
+   ══════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── GLOBAL ───────────────────────────────────────────── */
+  section{padding:4rem 1.5rem;}
+  #stats{padding:2rem 1.5rem;}
+  #kontakt{padding:4rem 1.5rem 5rem;}
+
+  /* ── NAV ──────────────────────────────────────────────── */
+  nav{padding:1rem 1.5rem;}
+  .nav-links li:not(:last-child){display:none;}
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  #hero{padding:5rem 1.5rem 2.5rem;align-items:flex-start;}
+  .h-inner{flex-direction:column;gap:2rem;align-items:stretch;}
+  .h1{font-size:clamp(36px,11vw,58px) !important;}
+  .h-bot{flex-direction:column;align-items:flex-start;gap:1.2rem;}
+  .h-acts{flex-direction:column;align-items:stretch;width:100%;}
+  .h-acts .btn{justify-content:center;}
+  .h-acts .btn-g{text-align:center;}
+  .h-mock{width:100%;transform:none !important;animation:none !important;opacity:1 !important;}
+  .h-mock .pbscreen{min-height:140px;}
+
+  /* ── STATS ────────────────────────────────────────────── */
+  #stats{padding:2rem 1.5rem !important;}
+  .stats{display:grid !important;grid-template-columns:1fr 1fr !important;width:100%;}
+  .stat{padding:1.2rem 1rem !important;border-right:.5px solid rgba(20,18,16,.1);}
+  .stat:nth-child(2){border-right:none !important;}
+  .stat:nth-child(3){border-top:.5px solid rgba(20,18,16,.1);border-right:.5px solid rgba(20,18,16,.1);padding-left:1rem !important;}
+  .stat:nth-child(4){border-right:none !important;border-top:.5px solid rgba(20,18,16,.1);}
+  .stat-n{font-size:32px !important;}
+
+  /* ── LEISTUNGEN ───────────────────────────────────────── */
+  .lhd{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .lhd .ssub{text-align:left !important;max-width:100%;}
+  .lgrid{display:grid !important;grid-template-columns:1fr !important;width:100%;}
+  .ci{padding:2rem 1.5rem !important;min-height:auto !important;}
+  .combo{flex-direction:column;align-items:flex-start;gap:1.2rem;padding:1.8rem 1.5rem;}
+  .combo-price{align-items:flex-start;padding:0;}
+  .combo-num{font-size:46px;}
+  .combo-cta{width:100%;text-align:center;display:block;box-sizing:border-box;}
+  .addon{flex-direction:column;align-items:flex-start;gap:.8rem;padding:1.5rem;}
+  .addon-price{align-items:flex-start;text-align:left;}
+  .addon-num{font-size:34px;}
+
+  /* ── PORTFOLIO ────────────────────────────────────────── */
+  .pgrid{display:grid !important;grid-template-columns:1fr !important;width:100%;}
+  .phd{flex-direction:column;align-items:flex-start;gap:.8rem;}
+  .phd .ssub{text-align:left !important;max-width:100%;}
+
+  /* ── WARUM ────────────────────────────────────────────── */
+  .wgrid{grid-template-columns:1fr;gap:2.5rem;}
+  .wvis{display:block !important;}
+  .wbox{aspect-ratio:auto;padding:2rem 1.5rem;}
+
+  /* ── ÜBER MICH ────────────────────────────────────────── */
+  .ueber-mich{flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2rem 1.5rem;}
+
+  /* ── PROZESS ──────────────────────────────────────────── */
+  .psteps{grid-template-columns:1fr !important;gap:0;}
+  .pline{display:none !important;}
+  .pstep{padding-right:0;padding-bottom:2rem;border-bottom:.5px solid rgba(20,18,16,.08);}
+  .pstep:last-child{border-bottom:none;padding-bottom:0;}
+  .phd{flex-direction:column;align-items:flex-start;gap:.8rem;}
+
+  /* ── KONTAKT ──────────────────────────────────────────── */
+  .kgrid{grid-template-columns:1fr;gap:2.5rem;}
+  .kleft{position:relative;top:0;}
+  .fgrid{grid-template-columns:1fr;}
+  .bsub{width:100%;justify-content:center;}
+
+  /* ── FOOTER ───────────────────────────────────────────── */
+  footer{flex-direction:column;gap:1.2rem;padding:2rem 1.5rem;text-align:center;}
+  .flinks{justify-content:center;}
+}
 </style>
 </head>
 <body>
